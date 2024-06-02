@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Winkel</title>
+    <link rel="stylesheet" href="styles/shop.css">
+    <!-- Snipcart Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-oi8s8AKshJfbJzNn6bmMn5bkA/6l/tP13wplbV1pGxVEkY0lt5d7LEL8SPLddXMWZQW1FUVbUpl6IUplb3d8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <h1>Welkom bij Mijn Winkel</h1>
+        <nav>
+            <button class="snipcart-checkout">
+                <i class="fas fa-shopping-cart"></i><img src="assets/cart.svg" width="30px"><span class="snipcart-items-count"></span>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <div class="product">
+            <a href="product1.html">
+                <img src="assets/product1.png" class="product-image">
+                <h2>Product 1</h2>
+                <p>Prijs: €10</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product2.html">
+                <img src="assets/product1.png" class="product-image">
+                <h2>Product 2</h2>
+                <p>Prijs: €20</p>
+            </a>
+        </div>
+    </main>
+
+    <!-- Snipcart -->
+    <div hidden id="snipcart" data-api-key="ZGFkNzAxMzQtNmY1Yy00ZjYwLWE4ZGEtZGY1Zjk0ZTU3Y2Q3NjM4NTI3NTM4NTQ0OTA2NTgz" data-config-modal-style="side"></div>
+    <script src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js"></script>
+    <script>
+        document.addEventListener('snipcart.ready', function() {
+            Snipcart.api.session.setLanguage('nl');
+        });
+    </script>
+    <script>
+        document.addEventListener('snipcart.ready', function() {
+            // Haal het aantal items in het winkelwagentje op
+            var itemCount = Snipcart.store.getState().cart.items.length;
+            // Update de weergave van het aantal items in de winkelwagen
+            document.querySelector('.snipcart-items-count').textContent = itemCount;
+        });
+    </script>
+</body>
+</html>
