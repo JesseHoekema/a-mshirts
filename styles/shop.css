@@ -6,13 +6,14 @@ body {
     padding: 0;
 }
 header {
-    background-color: #007BFF;
+    background-color: #2f8f2f;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
 }
 header h1 {
     margin: 0;
+    font-weight: bold;
 }
 nav {
     text-align: right;
@@ -28,6 +29,7 @@ nav button {
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    
 }
 
 nav button i {
