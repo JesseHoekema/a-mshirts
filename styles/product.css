@@ -5,22 +5,44 @@ body {
     margin: 0;
     padding: 0;
 }
+
 header {
-    background-color: #007BFF;
+    background-color: #2f8f2f;
     color: white;
-    padding: 20px;
     text-align: center;
+    padding: 20px;
+    position: relative;
 }
+
 header h1 {
     margin: 0;
+    font-weight: bold;
 }
+
 nav {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: -40px;
     margin-right: 20px;
 }
 
-nav button {
+nav .back-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+nav .back-button i {
+    margin-right: 50px;
+}
+
+nav .snipcart-checkout {
     background: none;
     border: none;
     color: white;
@@ -30,14 +52,47 @@ nav button {
     align-items: center;
 }
 
-nav button i {
+nav .snipcart-checkout i {
     margin-right: 5px;
 }
 
 main {
     padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+}
+
+.product {
+    border: 1px solid #ccc;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.product h2 {
+    margin: 0 0 10px 0;
+}
+
+.product p {
+    font-size: 18px;
+    color: #007BFF;
+    margin: 10px 0;
+}
+
+.product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .product-details {
@@ -79,9 +134,11 @@ main {
     color: red;
     font-weight: 600;
 }
+
 .buy-info sup {
     font-size: 35px;
 }
+
 .buy-info button {
     background-color: #007BFF;
     color: white;
@@ -96,13 +153,57 @@ main {
 .buy-info button:hover {
     background-color: #0056b3;
 }
-.product-name {
-    font-size: 26px;
-}
+
 img {
     pointer-events: none;
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+}
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product, .buy-info {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .product-details {
+        flex-direction: column;
+    }
+
+    .product-image, .buy-info {
+        max-width: 100%;
+        width: 100%;
+    }
+    .buy-info button {
+        width: 100%;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        text-align: center;
+        flex-direction: column;
+    }
+ 
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .buy-info button {
+        width: 100%;
+        max-width: 90%;
+    }
+    nav button {
+        width: 100%;
+        margin-top: 10px;
+    }
 }
